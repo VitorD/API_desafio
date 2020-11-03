@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace API_desafio
+namespace API_desafivo_v2
 {
     public class FilterConfig
     {
