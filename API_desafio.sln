@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_desafivo_v2", "API_desafivo_v2.csproj", "{C066A0F2-5113-491D-AB04-03CE3040248B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_desafio", "API_desafio.csproj", "{C066A0F2-5113-491D-AB04-03CE3040248B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

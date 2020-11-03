@@ -332,9 +332,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\banco_usuarios.mdf" />
-    <Content Include="App_Data\banco_usuarios_log.ldf">
-      <DependentUpon>banco_usuarios.mdf</DependentUpon>
+    <Content Include="App_Data\Bdusuarios.mdf" />
+    <Content Include="App_Data\Bdusuarios_log.ldf">
+      <DependentUpon>Bdusuarios.mdf</DependentUpon>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
