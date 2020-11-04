@@ -19,10 +19,9 @@ namespace API_desafivo_v2.Mappers
 
             });
             IMapper _mapper = configuration.CreateMapper();
-            return _mapper;
-            
-           
-             
+            return _mapper;  
         }
+
+
     }
 }

@@ -16,14 +16,6 @@ namespace API_desafivo_v2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-   
-
-            // Configurando o AutoMapper para registrar os profiles
-            // de mapeamento durante a inicialização da aplicação.
-            //AutomapperConfig.RegisterMappings();
-
-
-
         }
     }
 }
