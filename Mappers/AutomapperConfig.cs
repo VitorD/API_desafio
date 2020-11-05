@@ -15,11 +15,23 @@ namespace API_desafivo_v2.Mappers
             {
                 cfg.CreateMap<Usuario, UsuarioListDTO>();
                 cfg.CreateMap<Usuario, UsuarioCreateUpdateDTO>();
-                cfg.CreateMap<UsuarioCreateUpdateDTO,Usuario>().ForMember(dest => dest.Ativo, opt => opt.Ignore());
+                cfg.CreateMap<UsuarioCreateUpdateDTO, Usuario>().ForMember(dest => dest.Ativo, opt => opt.Ignore());
 
             });
+
             IMapper _mapper = configuration.CreateMapper();
             return _mapper;  
+        }
+
+        public static IConfigurationProvider Criar_Mapeamento()
+        {
+
+             MapperConfiguration config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Usuario, UsuarioListDTO>();
+                cfg.CreateMap<Usuario, UsuarioCreateUpdateDTO>();
+            });
+            return config;
         }
 
 

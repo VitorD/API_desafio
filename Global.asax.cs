@@ -2,6 +2,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using API_desafivo_v2.Data;
 using API_desafivo_v2.Mappers;
 
 namespace API_desafivo_v2
@@ -15,6 +16,8 @@ namespace API_desafivo_v2
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            UnityConfig.RegisterComponents();
+        
 
         }
     }

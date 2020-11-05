@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
@@ -10,17 +9,26 @@ using AutoMapper.QueryableExtensions;
 using API_desafivo_v2.Mappers;
 using System.Security.Cryptography;
 using System.Text;
-using System.Runtime.Remoting.Messaging;
+using System.Data.Entity;
 
 namespace API_desafivo_v2.Controllers
 {
     public class usuarioController : ApiController
     {
+
         //variavel estatica, para não resetar os dados quando nós fizermos as rotas
-         private API_desafivo_v2Context dbUsuario = new API_desafivo_v2Context();
-     
-        //injecao de dependencia
+        
+        private static API_desafivo_v2Context _context;
         private static IMapper _mapper;
+        public usuarioController(API_desafivo_v2Context dbUsuario)
+            {
+                _context = dbUsuario;
+            }
+
+        IConfigurationProvider config = AutomapperConfig.Criar_Mapeamento();
+
+        //injecao de dependencia
+        
        
 
         //rota para adicionar um novo usuário, recebe um usuario serializado em JSON CADASTRO
@@ -44,9 +52,9 @@ namespace API_desafivo_v2.Controllers
                     pronto.Senha = CreateMD5(usuario.Senha);
 
                     //chama Dbcontext para adicionar o usuário
-                    dbUsuario.Usuarios.Add(pronto);
+                    _context.Usuarios.Add(pronto);
 
-                    var sucesso = dbUsuario.SaveChanges();
+                    var sucesso = _context.SaveChanges();
 
                     if (Convert.ToBoolean(sucesso)) return Ok("Usuário inserido com sucesso.");
 
@@ -76,32 +84,30 @@ namespace API_desafivo_v2.Controllers
                     return BadRequest(ModelState);
                 }
                 else
-                { 
-                    
+                {
 
-                    Usuario _usuario;
-                    using (var consulta = new API_desafivo_v2Context())
-                    {
-                        //peguei o usuario
-                        _usuario = consulta.Usuarios.Where(a => a.Id == usuario.Id).FirstOrDefault();
-                    }
+
+
+
+                    //peguei o usuario
+                    var usuario_existe = _context.Usuarios.Count(a => a.Id == usuario.Id);
+
                     //Alterando usuario fora do contexto
-                    if (_usuario!= null)
+                    if (usuario_existe > 0)
                     {
                         _mapper = AutomapperConfig.RegisterMappings();
-                        var pronto = _mapper.Map<Usuario>(usuario);
-                        using (var dbuser = new API_desafivo_v2Context())
-                        {
+                         var _usuario = _mapper.Map<Usuario>(usuario);
+                        
                             //Marca a entidade como modificada
-                            dbuser.Entry(pronto).State = System.Data.Entity.EntityState.Modified;
+                            _context.Entry(_usuario).State = EntityState.Modified;
                             //chama o método SaveChanges
-                            dbuser.SaveChanges();
+                            _context.SaveChanges();
                             return Ok( "conta alterada com sucesso" + StatusCode(HttpStatusCode.NoContent));
-                        }    
-                       
+
+
                     }
- 
-                    else return BadRequest("Nenhum usuário registrado. Por favor tente novamente");
+
+                    else return BadRequest("Usuario inexistente. Por favor tente novamente");
                 }   
             }
             catch (InvalidOperationException ex)
@@ -118,9 +124,9 @@ namespace API_desafivo_v2.Controllers
         {
             try
             {
-                int totalPaginas = (int)Math.Ceiling(dbUsuario.Usuarios.Count() / Convert.ToDecimal(quantidadeRegistros));
+                int totalPaginas = (int)Math.Ceiling(_context.Usuarios.Count() / Convert.ToDecimal(quantidadeRegistros));
 
-                var user = dbUsuario.Usuarios.OrderBy(m => m.Id).Skip(quantidadeRegistros * (pagina - 1)).Take(quantidadeRegistros).
+                var user = _context.Usuarios.OrderBy(m => m.Id).Skip(quantidadeRegistros * (pagina - 1)).Take(quantidadeRegistros).
                            ProjectTo<UsuarioListDTO>(config).ToList();
                 if (user.Count > 0) return Ok(user);
                 else return Ok("nenhum usuario registrado no banco de dados");
@@ -137,11 +143,7 @@ namespace API_desafivo_v2.Controllers
 
         }
 
-        static MapperConfiguration config = new MapperConfiguration(cfg =>
-        {
-            cfg.CreateMap<Usuario, UsuarioListDTO>();
-            cfg.CreateMap<Usuario, UsuarioCreateUpdateDTO>();
-        });
+        
 
         //metodo de criptografia
         public static string CreateMD5(string input)
@@ -168,8 +170,8 @@ namespace API_desafivo_v2.Controllers
         private bool verifica_email_senha(string login, string email)
         {
             //consultas linq
-            var loginvalidado = dbUsuario.Usuarios.Where(b => b.Login == login).FirstOrDefault();
-            var emailvalidado = dbUsuario.Usuarios.Where(b => b.Email == email).FirstOrDefault();
+            var loginvalidado = _context.Usuarios.Where(b => b.Login == login).FirstOrDefault();
+            var emailvalidado = _context.Usuarios.Where(b => b.Email == email).FirstOrDefault();
             if (loginvalidado == null  || emailvalidado == null) return true;
 
             else return false;

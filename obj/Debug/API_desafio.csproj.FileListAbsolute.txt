@@ -314,3 +314,8 @@ C:\Users\familia\www\API_desafio\obj\Debug\API_desafio.csproj.CoreCompileInputs.
 C:\Users\familia\www\API_desafio\obj\Debug\API_desafio.csproj.CopyComplete
 C:\Users\familia\www\API_desafio\obj\Debug\API_desafivo_v2.dll
 C:\Users\familia\www\API_desafio\obj\Debug\API_desafivo_v2.pdb
+C:\Users\familia\www\API_desafio\bin\Unity.Abstractions.dll
+C:\Users\familia\www\API_desafio\bin\Unity.Container.dll
+C:\Users\familia\www\API_desafio\bin\Unity.WebApi.dll
+C:\Users\familia\www\API_desafio\bin\Unity.Abstractions.pdb
+C:\Users\familia\www\API_desafio\bin\Unity.Container.pdb
