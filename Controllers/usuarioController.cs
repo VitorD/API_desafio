@@ -86,9 +86,6 @@ namespace API_desafivo_v2.Controllers
                 else
                 {
 
-
-
-
                     //peguei o usuario
                     var usuario_existe = _context.Usuarios.Count(a => a.Id == usuario.Id);
 
@@ -97,14 +94,13 @@ namespace API_desafivo_v2.Controllers
                     {
                         _mapper = AutomapperConfig.RegisterMappings();
                          var _usuario = _mapper.Map<Usuario>(usuario);
-                        
-                            //Marca a entidade como modificada
-                            _context.Entry(_usuario).State = EntityState.Modified;
-                            //chama o método SaveChanges
-                            _context.SaveChanges();
-                            return Ok( "conta alterada com sucesso" + StatusCode(HttpStatusCode.NoContent));
-
-
+                        //senha criptografada
+                        _usuario.Senha = CreateMD5(_usuario.Senha);
+                        //Marca a entidade como modificada
+                        _context.Entry(_usuario).State = EntityState.Modified;
+                        //chama o método SaveChanges
+                        _context.SaveChanges();
+                        return Ok( "conta alterada com sucesso" + StatusCode(HttpStatusCode.NoContent));
                     }
 
                     else return BadRequest("Usuario inexistente. Por favor tente novamente");
