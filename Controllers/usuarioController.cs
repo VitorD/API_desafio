@@ -89,12 +89,14 @@ namespace API_desafio.Controllers
 
                     //peguei o usuario
                     var usuario_existe = _context.Usuarios.Count(a => a.Id == usuario.Id);
-
+                    
                     //Alterando usuario fora do contexto
                     if (usuario_existe > 0)
                     {
                         _mapper = AutomapperConfig.RegisterMappings();
                          var _usuario = _mapper.Map<Usuario>(usuario);
+
+                        _usuario.Ativo = true;
                         //senha criptografada
                         _usuario.Senha = CreateMD5(_usuario.Senha);
                         //Marca a entidade como modificada
