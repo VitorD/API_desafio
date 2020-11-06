@@ -12,7 +12,7 @@ namespace API_desafio
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "usuario", action = "ExibirTodos", id = UrlParameter.Optional }
             );
         }
     }
