@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace API_desafivo_v2
+namespace API_desafio
 {
     public class BundleConfig
     {

@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_desafivo_v2.Models
+namespace API_desafio.Models
 {
     [Table("Usuario")]
     public class Usuario

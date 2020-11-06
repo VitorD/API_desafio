@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 
-namespace API_desafivo_v2.Models
+namespace API_desafio.Models
 {
     public class UsuarioListDTO
     {

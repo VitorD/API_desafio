@@ -93,9 +93,6 @@ C:\Users\familia\www\API_desafio\API_desafio\obj\Debug\API_desafio.csproj.CoreCo
 C:\Users\familia\www\API_desafio\API_desafio\obj\Debug\API_desafio.csproj.CopyComplete
 C:\Users\familia\www\API_desafio\API_desafio\obj\Debug\API_desafio.dll
 C:\Users\familia\www\API_desafio\API_desafio\obj\Debug\API_desafio.pdb
-C:\Users\familia\www\API_desafio\bin\API_desafivo_v2.dll.config
-C:\Users\familia\www\API_desafio\bin\API_desafivo_v2.dll
-C:\Users\familia\www\API_desafio\bin\API_desafivo_v2.pdb
 C:\Users\familia\www\API_desafio\bin\roslyn\csc.exe
 C:\Users\familia\www\API_desafio\bin\roslyn\csc.exe.config
 C:\Users\familia\www\API_desafio\bin\roslyn\csc.rsp
@@ -312,10 +309,13 @@ C:\Users\familia\www\API_desafio\bin\pt-br\System.Web.WebPages.Razor.resources.d
 C:\Users\familia\www\API_desafio\obj\Debug\API_desafio.csprojAssemblyReference.cache
 C:\Users\familia\www\API_desafio\obj\Debug\API_desafio.csproj.CoreCompileInputs.cache
 C:\Users\familia\www\API_desafio\obj\Debug\API_desafio.csproj.CopyComplete
-C:\Users\familia\www\API_desafio\obj\Debug\API_desafivo_v2.dll
-C:\Users\familia\www\API_desafio\obj\Debug\API_desafivo_v2.pdb
 C:\Users\familia\www\API_desafio\bin\Unity.Abstractions.dll
 C:\Users\familia\www\API_desafio\bin\Unity.Container.dll
 C:\Users\familia\www\API_desafio\bin\Unity.WebApi.dll
 C:\Users\familia\www\API_desafio\bin\Unity.Abstractions.pdb
 C:\Users\familia\www\API_desafio\bin\Unity.Container.pdb
+C:\Users\familia\www\API_desafio\obj\Debug\API_desafio.dll
+C:\Users\familia\www\API_desafio\obj\Debug\API_desafio.pdb
+C:\Users\familia\www\API_desafio\bin\API_desafio.dll.config
+C:\Users\familia\www\API_desafio\bin\API_desafio.dll
+C:\Users\familia\www\API_desafio\bin\API_desafio.pdb

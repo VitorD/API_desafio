@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using API_desafivo_v2.Models;
+﻿using System.Data.Entity;
+using API_desafio.Models;
 
-namespace API_desafivo_v2.Data
+namespace API_desafio.Data
 {
-    public class API_desafivo_v2Context : DbContext
+    public class API_desafio_Context : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -17,7 +12,7 @@ namespace API_desafivo_v2.Data
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public API_desafivo_v2Context() : base("name=banco_usuarios")
+        public API_desafio_Context() : base("name=banco_usuarios")
         {
         }
         public DbSet<Usuario> Usuarios { get; set; }

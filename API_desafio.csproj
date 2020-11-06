@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>API_desafivo_v2</RootNamespace>
-    <AssemblyName>API_desafivo_v2</AssemblyName>
+    <RootNamespace>API_desafio</RootNamespace>
+    <AssemblyName>API_desafio</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -330,12 +330,11 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\usuarioController.cs" />
-    <Compile Include="Data\API_desafivo_v2Context.cs" />
+    <Compile Include="Data\API_desafio_Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappers\AutomapperConfig.cs" />
-    <Compile Include="Mappers\MappingProfile.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioCreateUpdateDTO.cs" />
     <Compile Include="Models\UsuarioListDTO.cs" />

@@ -2,25 +2,25 @@
 using System.Linq;
 using System.Net;
 using System.Web.Http;
-using API_desafivo_v2.Data;
-using API_desafivo_v2.Models;
+using API_desafio.Data;
+using API_desafio.Models;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using API_desafivo_v2.Mappers;
+using API_desafio.Mappers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Data.Entity;
 
-namespace API_desafivo_v2.Controllers
+namespace API_desafio.Controllers
 {
     public class usuarioController : ApiController
     {
 
         //injecao de dependencia 
-        private static API_desafivo_v2Context _context;
+        private static API_desafio_Context _context;
         private static IMapper _mapper;
         private static StringBuilder _result;
-        public usuarioController(API_desafivo_v2Context dbUsuario, StringBuilder resultDI)
+        public usuarioController(API_desafio_Context dbUsuario, StringBuilder resultDI)
             {
                 _context = dbUsuario;
                 _result = resultDI;

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_desafivo_v2.Models
+namespace API_desafio.Models
 {
     public  class UsuarioCreateUpdateDTO
     {

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
-using API_desafivo_v2.Models;
+﻿using AutoMapper;
+using API_desafio.Models;
 
-namespace API_desafivo_v2.Mappers
+namespace API_desafio.Mappers
 {
     public class AutomapperConfig
     {

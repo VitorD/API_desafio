@@ -1,12 +1,11 @@
-using API_desafivo_v2.Controllers;
-using API_desafivo_v2.Data;
+using API_desafio.Data;
 using System.Data.Entity;
 using System.Text;
 using System.Web.Http;
 using Unity;
 using Unity.WebApi;
 
-namespace API_desafivo_v2
+namespace API_desafio
 {
     public static class UnityConfig
     {
@@ -14,7 +13,7 @@ namespace API_desafivo_v2
         {
 			var container = new UnityContainer();
             
-                 container.RegisterType< DbContext, API_desafivo_v2Context > (); 
+                 container.RegisterType< DbContext, API_desafio_Context > (); 
                  container.RegisterType<StringBuilder, StringBuilder>();
 
             //this
