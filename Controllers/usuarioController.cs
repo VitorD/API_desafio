@@ -16,18 +16,19 @@ namespace API_desafivo_v2.Controllers
     public class usuarioController : ApiController
     {
 
-        //variavel estatica, para não resetar os dados quando nós fizermos as rotas
-        
+        //injecao de dependencia 
         private static API_desafivo_v2Context _context;
         private static IMapper _mapper;
-        public usuarioController(API_desafivo_v2Context dbUsuario)
+        private static StringBuilder _result;
+        public usuarioController(API_desafivo_v2Context dbUsuario, StringBuilder resultDI)
             {
                 _context = dbUsuario;
+                _result = resultDI;
             }
 
         IConfigurationProvider config = AutomapperConfig.Criar_Mapeamento();
 
-        //injecao de dependencia
+        
         
        
 
@@ -152,12 +153,11 @@ namespace API_desafivo_v2.Controllers
                 byte[] hashBytes = md5.ComputeHash(inputBytes);
 
                 // Convertendo de byte para string
-                StringBuilder result = new StringBuilder();
                 foreach (byte b in hashBytes)
                 {
-                    result.Append(b.ToString("X2"));
+                    _result.Append(b.ToString("X2"));
                 }
-                return result.ToString();
+                return _result.ToString();
             }
         }   
 
